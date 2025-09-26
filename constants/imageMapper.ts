@@ -1,0 +1,15 @@
+export const imageMapper: { [key: string]: any } = {
+  'default-profile.jpg': require('@/assets/images/iconsprofiles/default-profile.jpg'),
+  'fotoM1.avif': require('@/assets/images/iconsprofiles/fotoM1.avif'),
+  'fotoM2.avif': require('@/assets/images/iconsprofiles/fotoM2.avif'),
+  'fotoM3.avif': require('@/assets/images/iconsprofiles/fotoM3.avif'),
+  'fotoM4.avif': require('@/assets/images/iconsprofiles/fotoM4.avif'),
+  'fotoM5.avif': require('@/assets/images/iconsprofiles/fotoM5.avif'),
+  'fotoM6.avif': require('@/assets/images/iconsprofiles/fotoM6.avif'),
+  'fotoF1.avif': require('@/assets/images/iconsprofiles/fotoF1.avif'),
+  'fotoF2.avif': require('@/assets/images/iconsprofiles/fotoF2.avif'),
+  'fotoF3.avif': require('@/assets/images/iconsprofiles/fotoF3.avif'),
+  'fotoF4.avif': require('@/assets/images/iconsprofiles/fotoF4.avif'),
+  'fotoF5.avif': require('@/assets/images/iconsprofiles/fotoF5.avif'),
+  'fotoF6.avif': require('@/assets/images/iconsprofiles/fotoF6.avif'),
+};
