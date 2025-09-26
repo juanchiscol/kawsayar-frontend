@@ -91,15 +91,23 @@ const HomeScreen = () => {
     ],
     legend: ["Evolución del Índice de Anemia"],
   };
-
+  let mensajeAnemia;
+  if (tieneAnemia === null) {
+    mensajeAnemia = "Sin información de anemia";
+  } else if (tieneAnemia) {
+    mensajeAnemia = "Índices con Anemia";
+  } else {
+    mensajeAnemia = "Sin índices de Anemia";
+  }
   return (
+
     <View style={homeStyles.screen}>
       <Stack.Screen
         options={{
           title: "Home",
           headerShown: false,
         }}
-      />  
+      />
       <StatusBar style="light" />
 
       {loading ? (
@@ -130,7 +138,7 @@ const HomeScreen = () => {
                   <Text style={{ ...homeStyles.subTile, marginLeft: 10 }}>{fechaUltimoControl}</Text>
                 </View>
                 <Text style={homeStyles.subTile}>
-                  {tieneAnemia === null ? "Sin información de anemia" : tieneAnemia ? "Índices con Anemia" : "Sin índices de Anemia"}
+                  {mensajeAnemia}
                 </Text>
               </View>
             </View>
