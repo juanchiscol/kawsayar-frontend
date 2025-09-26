@@ -82,12 +82,12 @@ const Historial = () => {
 
   return (
     <View style={homeStyles.screen}>
-          <Stack.Screen
+      <Stack.Screen
         options={{
           title: "Historial",
           headerShown: false,
         }}
-      />  
+      />
       <View style={globalStyles.headerContainer}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <FontAwesome5 name="history" size={24} color="#AAAAAA" />
@@ -161,10 +161,11 @@ const Historial = () => {
                       />
                       <TouchableOpacity
                         style={historialStyles.detailButtonContainer}
-                        onPress={() => router.push(`/detalle?id=${control.id as any}&perfilId=${id}`)}
+                        onPress={() => router.push(`/detalle?id=${control.id}&perfilId=${id}`)} // Eliminada la aserción 'as any'
                       >
                         <Text style={historialStyles.detailButton}>Ver detalle</Text>
                       </TouchableOpacity>
+
                     </View>
                   </View>
                 ))}
