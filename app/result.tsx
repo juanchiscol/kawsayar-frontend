@@ -1,11 +1,11 @@
-import React from "react";
-import { View, Text, Image, StyleSheet, Animated, TouchableOpacity, Platform } from "react-native";
-import { router, useLocalSearchParams, Stack } from "expo-router";
+import ProgressBar from "@/components/ProgressBar"; // Importa el componente ProgressBar
+import InformacionYVideos from "@/components/Videos";
 import { homeStyles } from "@/styles/home-styles";
 import { Fontisto, Ionicons } from "@expo/vector-icons";
-import InformacionYVideos from "@/components/Videos";
-import ProgressBar from "@/components/ProgressBar"; // Importa el componente ProgressBar
-import { ScrollView, GestureHandlerRootView } from "react-native-gesture-handler";
+import { router, Stack, useLocalSearchParams } from "expo-router";
+import React from "react";
+import { Animated, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { GestureHandlerRootView, ScrollView } from "react-native-gesture-handler";
 
 const Result = () => {
     const { resultado, imgrecortada, imagenoriginal, fecha, } = useLocalSearchParams();
@@ -43,6 +43,7 @@ const Result = () => {
 
             <Stack.Screen
                 options={{
+                    headerShown: true,
                     headerTitle: "RESULTADO DE LA CONSULTA",
                     headerStyle: {
                         backgroundColor: "#1E1E2C",
@@ -55,7 +56,6 @@ const Result = () => {
                       },
                     headerBackVisible: false,
                     gestureEnabled: false,
-                    headerShown: true,
                     ...(Platform.OS === 'ios' && {
                         // Android-specific overrides
                         headerTitleAlign: 'center',

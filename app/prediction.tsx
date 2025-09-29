@@ -176,6 +176,7 @@ const Prediction = () => {
         <GestureHandlerRootView style={homeStyles.screen}>
             <Stack.Screen
                 options={{
+                    headerShown: true,
                     headerTitle: "NUEVA CONSULTA",
                     headerStyle: {
                         backgroundColor: "#1E1E2C",

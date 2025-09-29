@@ -60,6 +60,7 @@ const DetalleControl = () => {
       {/* Solo renderizar el Stack.Screen después de que los datos estén listos */}
       <Stack.Screen
         options={{
+          headerShown: true,
           headerTitle: `CONTROL / ${detalle.fecha_control}`,
           headerStyle: {
             backgroundColor: "#1E1E2C",
