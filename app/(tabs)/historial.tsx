@@ -9,7 +9,7 @@ import { useFocusEffect } from "@react-navigation/native";
 import { Stack, useRouter } from "expo-router";
 import moment from "moment";
 import "moment/locale/es";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { ActivityIndicator, Animated, Easing, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 const Historial = () => {
@@ -21,6 +21,8 @@ const Historial = () => {
   const [expandedMonths, setExpandedMonths] = useState<{ [key: string]: boolean }>({});
   const [animations] = useState<{ [key: string]: Animated.Value }>({});
   const [loading, setLoading] = useState(true);
+  const [selectedYear, setSelectedYear] = useState<string>("all");
+  const [statusFilter, setStatusFilter] = useState<"all" | "up" | "down">("all");
 
   useFocusEffect(
     useCallback(() => {
@@ -56,7 +58,28 @@ const Historial = () => {
   const formatDate = (date: Date) => moment(date).format("DD [de] MMMM YYYY");
   const formatTime = (date: Date) => moment(date).format("hh:mm A");  // Formato 12 horas con AM/PM
 
-  const groupedByMonth = controles.reduce((acc: { [key: string]: any[] }, control: { fecha_creacion: string; id: number; mejoro: boolean | null }) => {
+  const filteredControles = useMemo(
+    () =>
+      controles.filter((control: any) => {
+        const matchesStatus =
+          statusFilter === "all" ||
+          (statusFilter === "up" && control.mejoro) ||
+          (statusFilter === "down" && (control.mejoro === false || control.mejoro === null));
+
+        const yearLabel = moment(control.fecha_creacion).format("YYYY");
+        const matchesYear = selectedYear === "all" || yearLabel === selectedYear;
+
+        return matchesStatus && matchesYear;
+      }),
+    [controles, selectedYear, statusFilter]
+  );
+
+  const availableYears = useMemo(() => {
+    const years = Array.from(new Set(controles.map((c: any) => moment(c.fecha_creacion).format("YYYY"))));
+    return years.sort((a, b) => Number(b) - Number(a));
+  }, [controles]);
+
+  const groupedByMonth = filteredControles.reduce((acc: { [key: string]: any[] }, control: { fecha_creacion: string; id: number; mejoro: boolean | null }) => {
     const month = moment(control.fecha_creacion).format("MMM, YYYY");
     if (!acc[month]) acc[month] = [];
     acc[month].push(control);
@@ -105,7 +128,84 @@ const Historial = () => {
         controles={controles}
         isLoading={loading}
       />
-      <ScrollView style={historialStyles.container} showsVerticalScrollIndicator={false}>
+
+      <View style={[historialStyles.filtersWrapper, historialStyles.filtersCard]}>
+        <View style={historialStyles.filterHeader}>
+          <View style={historialStyles.filterTitleRow}>
+            <Ionicons name="calendar" size={18} color="#9AA5B1" />
+            <Text style={historialStyles.filterTitle}>Filtrar por año</Text>
+          </View>
+          <TouchableOpacity onPress={() => {
+            setSelectedYear("all");
+            setStatusFilter("all");
+          }}>
+            <Text style={historialStyles.resetFilter}>Limpiar</Text>
+          </TouchableOpacity>
+        </View>
+
+        <Text style={historialStyles.filterSubtitle}>Selecciona un año y estado para acotar los controles.</Text>
+
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={historialStyles.monthStrip}>
+          <TouchableOpacity
+            style={[historialStyles.monthChip, selectedYear === "all" && historialStyles.monthChipActive]}
+            onPress={() => setSelectedYear("all")}
+          >
+            <Text style={[historialStyles.monthChipText, selectedYear === "all" && historialStyles.monthChipTextActive]}>Todos</Text>
+          </TouchableOpacity>
+
+          {availableYears.map((year) => {
+            const active = selectedYear === year;
+            return (
+              <TouchableOpacity
+                key={year}
+                style={[historialStyles.monthChip, active && historialStyles.monthChipActive]}
+                onPress={() => setSelectedYear(year)}
+              >
+                <Text style={[historialStyles.monthChipText, active && historialStyles.monthChipTextActive]}>{year}</Text>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+
+        <View style={historialStyles.filterChips}>
+          {[
+            { key: "all", label: "Estado", icon: "options-outline" },
+            { key: "up", label: "Mejoró", icon: "trending-up" },
+            { key: "down", label: "Empeoró", icon: "trending-down" },
+          ].map((chip) => {
+            const active = statusFilter === chip.key;
+            return (
+              <TouchableOpacity
+                key={chip.key}
+                style={[historialStyles.chip, active && historialStyles.chipActive]}
+                onPress={() => setStatusFilter(chip.key as any)}
+              >
+                <View style={historialStyles.chipContent}>
+                  <Ionicons
+                    name={chip.icon as any}
+                    size={14}
+                    color={active ? "#FFF" : "#9AA5B1"}
+                  />
+                  <Text style={[historialStyles.chipText, active && historialStyles.chipTextActive]}>{chip.label}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      </View>
+
+      <ScrollView
+        style={historialStyles.container}
+        contentContainerStyle={historialStyles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
+        {filteredControles.length === 0 && (
+          <View style={historialStyles.emptyState}>
+            <Ionicons name="folder-open" size={26} color="#9AA5B1" />
+            <Text style={historialStyles.emptyTitle}>Sin resultados</Text>
+            <Text style={historialStyles.emptySubtitle}>Ajusta los filtros para ver controles.</Text>
+          </View>
+        )}
         {sortedMonths.map((month) => (
           <View key={month}>
             <TouchableOpacity style={historialStyles.monthHeader} onPress={() => toggleMonth(month)}>
@@ -139,36 +239,54 @@ const Historial = () => {
                   ],
                 }}
               >
-                {groupedByMonth[month].map((control) => (
-                  <View key={control.id} style={historialStyles.card}>
-                    <View >
-                      <Text style={historialStyles.date}>
+                {groupedByMonth[month].map((control) => {
+                  const isUp = control.mejoro === true;
+                  const isDown = control.mejoro === false;
+                  const statusLabel = isUp ? "Mejoró" : isDown ? "Empeoró" : "Sin dato";
 
-                        {formatDate(control.fecha_creacion)}
-                        {/* Fecha con formato "DD de MMMM YYYY" */}
-                      </Text>
-                      <Text style={historialStyles.date}>
-
-                        {formatTime(control.fecha_creacion)} {/* Hora AM/PM */}
-                      </Text>
-
+                  return (
+                    <View key={control.id} style={historialStyles.card}>
+                      <View style={historialStyles.cardLeft}>
+                        <View style={historialStyles.badgeRow}>
+                          <View
+                            style={[
+                              historialStyles.statusPill,
+                              isUp && historialStyles.statusUp,
+                              isDown && historialStyles.statusDown,
+                              !isUp && !isDown && historialStyles.statusNeutral,
+                            ]}
+                          >
+                            <Ionicons
+                              name={isUp ? "trending-up" : isDown ? "trending-down" : "remove"}
+                              size={14}
+                              color={isUp ? "#0E9F6E" : isDown ? "#E02424" : "#6B7280"}
+                            />
+                            <Text
+                              style={[
+                                historialStyles.statusText,
+                                isUp && historialStyles.statusTextUp,
+                                isDown && historialStyles.statusTextDown,
+                                !isUp && !isDown && historialStyles.statusTextNeutral,
+                              ]}
+                            >
+                              {statusLabel}
+                            </Text>
+                          </View>
+                        </View>
+                        <Text style={historialStyles.date}>{formatDate(control.fecha_creacion)}</Text>
+                        <Text style={historialStyles.time}>{formatTime(control.fecha_creacion)}</Text>
+                      </View>
+                      <View style={historialStyles.actions}>
+                        <TouchableOpacity
+                          style={historialStyles.detailButtonContainer}
+                          onPress={() => router.push(`/detalle?id=${control.id}&perfilId=${id}`)}
+                        >
+                          <Text style={historialStyles.detailButton}>Ver detalle</Text>
+                        </TouchableOpacity>
+                      </View>
                     </View>
-                    <View style={historialStyles.actions}>
-                      <Ionicons
-                        name={control.mejoro === null || !control.mejoro ? "trending-down" : "trending-up"}
-                        size={30}
-                        color={control.mejoro ? "green" : "red"}
-                      />
-                      <TouchableOpacity
-                        style={historialStyles.detailButtonContainer}
-                        onPress={() => router.push(`/detalle?id=${control.id}&perfilId=${id}`)} // Eliminada la aserción 'as any'
-                      >
-                        <Text style={historialStyles.detailButton}>Ver detalle</Text>
-                      </TouchableOpacity>
-
-                    </View>
-                  </View>
-                ))}
+                  );
+                })}
               </Animated.View>
             )}
           </View>

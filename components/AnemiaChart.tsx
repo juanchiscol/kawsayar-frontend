@@ -1,15 +1,15 @@
+import { MaterialIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
-  View,
-  Text,
-  Dimensions,
-  TouchableOpacity,
-  StyleSheet,
   Animated,
+  Dimensions,
   ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { LineChart } from "react-native-chart-kit";
-import { MaterialIcons } from "@expo/vector-icons";
 
 const { width: screenWidth } = Dimensions.get("window");
 
@@ -39,7 +39,7 @@ const AnemiaChart: React.FC<AnemiaChartProps> = ({ data }) => {
       const date = new Date(year, month - 1, day);
 
       const monthKey = `${month}/${year}`;
-      const monthName = date.toLocaleString("es-ES", { month: "long" });
+      const monthName = date.toLocaleString("es-ES", { month: "short" });
       const dayKey = datePart;
       const dayLabel = `${day}/${month}`;
 
@@ -205,7 +205,7 @@ const AnemiaChart: React.FC<AnemiaChartProps> = ({ data }) => {
         ))}
       </ScrollView>
     );
-    
+
   };
 
   const renderBackButton = () => {
@@ -251,12 +251,12 @@ const styles = StyleSheet.create({
 
   },
   title: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: "700",
     textAlign: "center",
     marginBottom: 16,
-    color: "#fff",
-    backgroundColor: "rgb(66, 125, 117)",
+    color: "rgba(252, 252, 252, 1)",
+    backgroundColor: "rgba(118, 224, 210, 0.53)",
     padding: 12,
     borderRadius: 20,
   },
@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "rgba(255, 255, 255, 0.05)",
   },
-  
+
   cardTitle: {
     fontSize: 15,
     fontWeight: "700",
@@ -295,14 +295,14 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     fontFamily: "ArvoBold",
   },
-  
+
   cardSubtitle: {
     fontSize: 13,
     lineHeight: 20,
     color: "#E2E8F0", // gris claro, mejor contraste
     fontFamily: "ArvoRegular",
   },
-  
+
   backContertainer: {
     flexDirection: "row",
     alignItems: "center",

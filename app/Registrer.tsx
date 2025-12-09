@@ -15,7 +15,6 @@ import Toast from "react-native-toast-message";
 import { StatusBar } from "expo-status-bar";
 
 import FormInput from "../components/FormInput";
-import Button from "../components/Button";
 import { registerUser, handleEmailVerification, handleVerifyEmailCode } from "@/apis/apis";
 import { registrerStyles } from "@/styles/registrer-styles";
 import { globalStyles } from "@/styles/global-styles";
@@ -106,9 +105,10 @@ const Register = () => {
         toast("Registro exitoso", "success");
         setFormData(initialForm);
         setTimeout(() => router.replace("/Login"), 1000);
-      }else {
+      } else {
         // Si no hay campo `result`, mostrar el error que se haya recibido
-        toast(res.error || "Ocurrió un error desconocido."); }
+        toast(res.error || "Ocurrió un error desconocido.");
+      }
     } catch {
       toast("Hubo un problema con el servidor.");
     }
@@ -148,8 +148,28 @@ const Register = () => {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={{ flex: 1 }}>
             {/* Header */}
-            <View style={globalStyles.headerContainer}>
-              <Text style={registrerStyles.title}>SACN</Text>
+            <View style={{ marginTop: 0 }}>
+              <View style={{
+                width: "100%",
+                height: 100,
+                backgroundColor: "rgba(72, 187, 171, 0.1)",
+                borderRadius: 30,
+                marginBottom: 20,
+                justifyContent: "center",
+                alignItems: "center",
+                borderBottomWidth: 2,
+                borderBottomColor: "rgba(72, 187, 171, 0.3)",
+              }}>
+                <Text style={{
+                  fontSize: 28,
+                  fontFamily: "ArvoBold",
+                  fontWeight: "bold",
+                  marginTop: 30,
+                  color: "rgb(72, 187, 171)",
+                }}>
+                  Kawsayar
+                </Text>
+              </View>
             </View>
 
             <View style={registrerStyles.tabContainer}>
@@ -192,27 +212,38 @@ const Register = () => {
                   />
                 )}
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                  <Button
+                  <TouchableOpacity
+                    style={[
+                      registrerStyles.codeButton,
+                      !validateEmail(formData.email) && registrerStyles.codeButtonDisabled
+                    ]}
                     onPress={() => handleSendVerificationCode(formData.email, formData.dni)}
-                    title="Enviar código"
-                    backgroundColor="rgb(72, 187, 171)"
-                    textColor="#000000"
-                    disabled={!validateEmail(formData.email) }
-                    width={"48%"}
-                    marginTop={0}
-                    marginBottom={10}
-                  />
+                    disabled={!validateEmail(formData.email)}
+                  >
+                    <Text style={[
+                      registrerStyles.codeButtonText,
+                      !validateEmail(formData.email) && registrerStyles.codeButtonTextDisabled
+                    ]}>
+                      Enviar código
+                    </Text>
+                  </TouchableOpacity>
                   {isCodeSent && (
-                    <Button
+                    <TouchableOpacity
+                      style={[
+                        registrerStyles.codeButton,
+                        !verificationCode && registrerStyles.codeButtonDisabled
+                      ]}
+
                       onPress={() => handleVerifyCode(verificationCode)}
-                      title="Validar código"
-                      backgroundColor="rgb(72, 187, 171)"
-                      textColor="#000000"
                       disabled={!verificationCode}
-                      width={"48%"}
-                      marginTop={0}
-                      marginBottom={10}
-                    />
+                    >
+                      <Text style={[
+                        registrerStyles.codeButtonText,
+                        !verificationCode && registrerStyles.codeButtonTextDisabled
+                      ]}>
+                        Validar código
+                      </Text>
+                    </TouchableOpacity>
                   )}
                 </View>
                 <FormRow>
@@ -232,7 +263,7 @@ const Register = () => {
                 </FormRow>
                 {renderInput("Dirección", "direccion")}
               </View>
-                {/* Aceptar términos y condiciones */}
+              {/* Aceptar términos y condiciones */}
               <View style={registrerStyles.termsContainer}>
                 <Text style={registrerStyles.termsText}>
                   Al registrarte, aceptas nuestros{" "}
@@ -246,13 +277,21 @@ const Register = () => {
             </ScrollView>
 
             <View style={registrerStyles.buttonContainer}>
-              <Button
+              <TouchableOpacity
+                style={[
+                  registrerStyles.registerButton,
+                  !isCodeValid && registrerStyles.registerButtonDisabled
+                ]}
                 onPress={handleRegister}
-                title="Registrarse"
-                backgroundColor="rgb(72, 187, 171)"
-                textColor="#000000"
                 disabled={!isCodeValid}
-              />
+              >
+                <Text style={[
+                  registrerStyles.registerButtonText,
+                  !isCodeValid && registrerStyles.registerButtonTextDisabled
+                ]}>
+                  Registrarse
+                </Text>
+              </TouchableOpacity>
             </View>
           </View>
         </TouchableWithoutFeedback>

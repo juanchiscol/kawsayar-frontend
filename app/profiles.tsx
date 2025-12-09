@@ -87,11 +87,11 @@ const Profiles = () => {
       ? availableImages[Math.floor(Math.random() * availableImages.length)]
       : "default-profile.jpg"; // Fallback si no hay imágenes disponibles
   };
-// Función para convertir la fecha de dd/mm/yyyy a yyyy-mm-dd
-const convertToDateFormat = (date: string) => {
-  const [day, month, year] = date.split("/");
-  return `${year}-${month}-${day}`;
-};
+  // Función para convertir la fecha de dd/mm/yyyy a yyyy-mm-dd
+  const convertToDateFormat = (date: string) => {
+    const [day, month, year] = date.split("/");
+    return `${year}-${month}-${day}`;
+  };
 
   const handleConfirmProfile = async () => {
 
@@ -143,7 +143,7 @@ const convertToDateFormat = (date: string) => {
 
   return (
     <View style={globalStyles.screen}>
-            <Toast />
+      <Toast />
 
       <Stack.Screen options={{ title: "Perfiles", headerShown: false, headerLeft: () => null, gestureEnabled: false }} />
       <StatusBar style="light" />
@@ -169,7 +169,9 @@ const convertToDateFormat = (date: string) => {
                   <Image source={imageMapper[profile.ft_perfil] || imageMapper['default-profile.jpg']} style={profilesStyles.profileImage} />
                 </View>
                 <Text style={profilesStyles.profileName}>{formatearNombre(profile.nombres, profile.apellido_paterno, profile.apellido_materno)}</Text>
+
               </View>
+
             </TouchableOpacity>
           ))
         ) : (
@@ -194,9 +196,9 @@ const convertToDateFormat = (date: string) => {
       <Button
         onPress={handleAddProfile}
         title="Añadir un nuevo perfil"
-        backgroundColor="rgb(72, 187, 171)"
-        textColor="#000000"
-        icon={<Ionicons name="person-add" size={25} color="#000000" />}
+        backgroundColor="rgba(118, 224, 210, 0.53)"
+        textColor="rgba(252, 252, 252, 1)"
+        icon={<Ionicons name="person-add" size={25} color="rgba(252, 252, 252, 1)" />}
       />
     </View>
   );
