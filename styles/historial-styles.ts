@@ -5,9 +5,6 @@ export const historialStyles = StyleSheet.create({
     flex: 1,
   },
 
-  scrollContent: {
-    paddingBottom: 120, // evita que el tabbar tape el último ítem
-  },
   filtersWrapper: {
     gap: 12,
     marginBottom: 14,

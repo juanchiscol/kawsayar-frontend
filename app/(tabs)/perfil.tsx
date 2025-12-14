@@ -6,15 +6,17 @@ import { globalStyles } from "@/styles/global-styles";
 import { homeStyles } from "@/styles/home-styles";
 import { perfilStyles } from "@/styles/perfil-styles";
 import { AntDesign, FontAwesome5, Ionicons } from "@expo/vector-icons";
-import { Stack,useRouter } from "expo-router";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
+import { Stack, useRouter } from "expo-router";
 import React, { useCallback, useEffect, useState } from "react";
-import { ActivityIndicator, Alert, Image, Text, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, Alert, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Toast from "react-native-toast-message";
 import ModalInfoProfilesUser from "../../components/Modals/InfoUser";
 import ModalProfiles from "../../components/Modals/ModalProfiles";
 
 // PerfilScreen Component
 const PerfilScreen = () => {
+  const tabBarHeight = useBottomTabBarHeight();
   const { user, profile, setProfile } = useProfile();
   const [loading, setLoading] = useState(true);
   const [, setProfiles] = useState([]);
@@ -131,7 +133,7 @@ const PerfilScreen = () => {
           headerShown: false,
         }}
       />  
-      <View style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: tabBarHeight }}>
         {loading ? (
           <View style={{ flex: 1, justifyContent: "center", alignItems: "center", marginTop: 20 }}>
             <ActivityIndicator size="large" color="#fff" />
@@ -201,7 +203,7 @@ const PerfilScreen = () => {
             </View>
           </>
         )}
-      </View>
+      </ScrollView>
 
       <ModalProfiles
         visible={modalVisible}

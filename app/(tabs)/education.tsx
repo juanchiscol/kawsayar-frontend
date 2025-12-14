@@ -1,13 +1,15 @@
 import { globalStyles } from "@/styles/global-styles";
 import { homeStyles } from "@/styles/home-styles";
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
-import { Text, View } from "react-native";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { Stack } from "expo-router";
+import React from "react";
+import { ScrollView, Text, View } from "react-native";
 
 import ComponentNewVidAll from "@/components/ComponentNewVidAll";
 
 const Education = () => {
+  const tabBarHeight = useBottomTabBarHeight();
   return (
     <View style={homeStyles.screen}>
                 <Stack.Screen
@@ -25,7 +27,9 @@ const Education = () => {
         </View>
 
       </View>
-      <ComponentNewVidAll />
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: tabBarHeight }}>
+        <ComponentNewVidAll />
+      </ScrollView>
 
     </View>
   );

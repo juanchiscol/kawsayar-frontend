@@ -10,6 +10,7 @@ import { Stack, router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React, { useCallback, useEffect, useState } from "react";
 
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import {
   ActivityIndicator,
   Image,
@@ -31,6 +32,7 @@ const HomeScreen = () => {
   const { profile } = useProfile();
   const [controles, setControles] = useState<Control[]>([]);
   const [loading, setLoading] = useState(true);
+  const tabBarHeight = useBottomTabBarHeight();
 
   const id = profile?.id ?? 0;
   const nombres = profile?.nombres ?? "";
@@ -150,7 +152,10 @@ const HomeScreen = () => {
             </View>
           </View>
 
-          <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={homeStyles.scrollView}>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={[homeStyles.scrollView, { paddingBottom: tabBarHeight + 20 }]}
+          >
             <View style={homeStyles.sectionContainer}>
               <Text style={homeStyles.titleSection}>- Vista general</Text>
               {controles.length > 0 ? (

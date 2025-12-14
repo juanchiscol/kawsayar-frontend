@@ -5,6 +5,7 @@ import { globalStyles } from "@/styles/global-styles";
 import { historialStyles } from "@/styles/historial-styles";
 import { homeStyles } from "@/styles/home-styles";
 import { FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { useFocusEffect } from "@react-navigation/native";
 import { Stack, useRouter } from "expo-router";
 import moment from "moment";
@@ -13,6 +14,7 @@ import React, { useCallback, useMemo, useState } from "react";
 import { ActivityIndicator, Animated, Easing, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 const Historial = () => {
+  const tabBarHeight = useBottomTabBarHeight();
   const { profile } = useProfile();
   const { id, nombres, apellido_paterno, apellido_materno, dni, edad, fecha_nacimiento, sexo } = profile ?? {};
   const router = useRouter();
@@ -196,8 +198,8 @@ const Historial = () => {
 
       <ScrollView
         style={historialStyles.container}
-        contentContainerStyle={historialStyles.scrollContent}
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: tabBarHeight }}
       >
         {filteredControles.length === 0 && (
           <View style={historialStyles.emptyState}>

@@ -1,5 +1,5 @@
-import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
 import { Platform } from "react-native";
 // Componente para la pantalla Home
 const HomeScreen = ({ color, size }: { color: string, size: number }) => (
@@ -14,6 +14,11 @@ const HistorialScreen = ({ color, size }: { color: string, size: number }) => (
 // Componente para la pantalla Educación
 const EducationScreen = ({ color, size }: { color: string, size: number }) => (
   <Ionicons name="school" color={color} size={size} />
+);
+
+// Componente para la pantalla Chat
+const ChatScreen = ({ color, size }: { color: string, size: number }) => (
+  <Ionicons name="chatbubbles" color={color} size={size} />
 );
 
 // Componente para la pantalla Perfil
@@ -66,6 +71,14 @@ export default function TabsLayout() {
           title: "Educación",
           headerShown: false, // Desactivar encabezado para esta pantalla
           tabBarIcon: EducationScreen, // Usar el componente como prop
+        }}
+      />
+      <Tabs.Screen
+        name="chatbot"
+        options={{
+          title: "Chat IA",
+          headerShown: false,
+          tabBarIcon: ChatScreen,
         }}
       />
       <Tabs.Screen
