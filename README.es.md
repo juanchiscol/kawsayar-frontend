@@ -1,8 +1,8 @@
-# SACN - Sistema de Detección de Anemia
+# kawsayar - Sistema de Detección de Anemia
 
 <div align="center">
 
-<img src="./assets/images/logo-anemia.png" alt="SACN Logo" width="200"/>
+<img src="./assets/images/logo-anemia.png" alt="kawsayar Logo" width="200"/>
 
 ![Versión](https://img.shields.io/badge/versi%C3%B3n-1.0.0-blue.svg)
 ![Expo](https://img.shields.io/badge/Expo-~54.0-000020.svg?style=flat&logo=expo)
@@ -34,9 +34,9 @@ Una aplicación móvil inteligente para la detección no invasiva de anemia medi
 
 ## Acerca de
 
-SACN (Sistema de Detección de Anemia) es una aplicación móvil de vanguardia que aprovecha la inteligencia artificial y la visión por computadora para detectar anemia mediante el análisis de imágenes conjuntivales. La aplicación proporciona un método rápido, no invasivo y accesible para el cribado preliminar de anemia, haciendo la atención médica más accesible para todos.
+kawsayar (Sistema de Detección de Anemia) es una aplicación móvil de vanguardia que aprovecha la inteligencia artificial y la visión por computadora para detectar anemia mediante el análisis de imágenes conjuntivales. La aplicación proporciona un método rápido, no invasivo y accesible para el cribado preliminar de anemia, haciendo la atención médica más accesible para todos.
 
-### ¿Por qué SACN?
+### ¿Por qué kawsayar?
 
 - No invasivo: No se requieren análisis de sangre
 - Resultados rápidos: Obtén predicciones en segundos
@@ -109,7 +109,7 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
   npm install -g expo-cli
   ```
 - App Expo Go: Instalar en tu dispositivo móvil ([iOS](https://apps.apple.com/app/expo-go/id982107779) | [Android](https://play.google.com/store/apps/details?id=host.exp.exponent))
-- Servidor Backend: API backend de SACN en ejecución (ver [Integración de API](#integración-de-api))
+- Servidor Backend: API backend de kawsayar en ejecución (ver [Integración de API](#integración-de-api))
 
 ### Opcional (para compilaciones nativas)
 
@@ -122,7 +122,7 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
 ```bash
 git clone <url-del-repositorio>
-cd SACN-TESIS-FRONTEND
+cd kawsayar-TESIS-FRONTEND
 ```
 
 ### 2. Instalar Dependencias
@@ -235,7 +235,7 @@ eas build --platform ios
 
 ## Estructura del Proyecto
 
-SACN-TESIS-FRONTEND/
+-FRONTEND/
 ├── app/ # Pantallas principales de la aplicación
 │ ├── \_layout.tsx # Layout raíz con navegación
 │ ├── index.tsx # Pantalla de inicio/splash
@@ -290,7 +290,7 @@ SACN-TESIS-FRONTEND/
 
 ### Requisitos del Backend
 
-Esta aplicación frontend requiere que el servidor backend de SACN esté en ejecución. El backend debe proporcionar:
+Esta aplicación frontend requiere que el servidor backend de kawsayar esté en ejecución. El backend debe proporcionar:
 
 1. API de Autenticación de Usuario
    - Registro con verificación de correo electrónico
@@ -353,7 +353,7 @@ Email: chiscolpatazcajuandavid@gmail.com
 
 ## Fotos del Proyecto
 
-A continuación algunas capturas de pantalla de la app SACN:
+A continuación algunas capturas de pantalla de la app kawsayar:
 
 <div align="center">
 

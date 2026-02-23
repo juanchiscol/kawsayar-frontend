@@ -1,10 +1,10 @@
-import React from 'react';
-import { Text, View, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { historialStyles } from "@/styles/historial-styles";
+import { MaterialIcons } from "@expo/vector-icons";
 import * as Print from 'expo-print';
 import * as Sharing from 'expo-sharing';
 import moment from 'moment';
-import { MaterialIcons } from "@expo/vector-icons";
-import { historialStyles } from "@/styles/historial-styles";
+import React from 'react';
+import { ActivityIndicator, Text, TouchableOpacity, View } from 'react-native';
 
 interface ExportToPDFProps {
     nombres: string;
@@ -145,7 +145,7 @@ const ExportToPDF = ({
           <!-- Encabezado -->
         <div class="mb-3 pb-6 border-gray-700">
               <div class="text-center mb-6">
-                  <h2 class="text-5xl font-semibold tracking-wider text-teal-700">SACN</h2>
+                  <h2 class="text-5xl font-semibold tracking-wider text-teal-700">kawsayar</h2>
                   <p class="text-xl font-semibold text-gray-600 mt-2">Sistema de Alerta contra la Anemia</p>
               </div>
 
@@ -170,7 +170,7 @@ const ExportToPDF = ({
           
           <!-- Pie de página -->
           <div class="text-center mt-10 text-gray-700 text-md font-semibold pt-5 border-t border-gray-700 tracking-wide">
-            Sistema de Alerta Contra la Anemia • SACN © ${currentDate.getFullYear()}
+            Sistema de Alerta Contra la Anemia • kawsayar © ${currentDate.getFullYear()}
           </div>
         </div>
           </body>

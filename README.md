@@ -1,8 +1,8 @@
-# SACN - Anemia Detection System
+# kawsayar - Anemia Detection System
 
 <div align="center">
 
-<img src="./assets/images/logo-anemia.png" alt="SACN Logo" width="200"/>
+<img src="./assets/images/logo-anemia.png" alt="kawsayar Logo" width="200"/>
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Expo](https://img.shields.io/badge/Expo-~54.0-000020.svg?style=flat&logo=expo)
@@ -34,9 +34,9 @@ An intelligent mobile application for non-invasive anemia detection using AI-pow
 
 ## About
 
-SACN (Anemia Detection System) is a cutting-edge mobile application that leverages artificial intelligence and computer vision to detect anemia through conjunctival image analysis. The app provides a quick, non-invasive, and accessible method for preliminary anemia screening, making healthcare more accessible to everyone.
+kawsayar (Anemia Detection System) is a cutting-edge mobile application that leverages artificial intelligence and computer vision to detect anemia through conjunctival image analysis. The app provides a quick, non-invasive, and accessible method for preliminary anemia screening, making healthcare more accessible to everyone.
 
-### Why SACN?
+### Why kawsayar?
 
 - Non-invasive: No blood tests required
 - Fast Results: Get predictions in seconds
@@ -109,7 +109,7 @@ Before you begin, ensure you have the following installed:
   npm install -g expo-cli
   ```
 - Expo Go App: Install on your mobile device ([iOS](https://apps.apple.com/app/expo-go/id982107779) | [Android](https://play.google.com/store/apps/details?id=host.exp.exponent))
-- Backend Server: SACN backend API running (see [API Integration](#api-integration))
+- Backend Server: kawsayar backend API running (see [API Integration](#api-integration))
 
 ### Optional (for native builds)
 
@@ -122,7 +122,7 @@ Before you begin, ensure you have the following installed:
 
 ```bash
 git clone <repository-url>
-cd SACN-TESIS-FRONTEND
+cd kawsayar-frontend
 ```
 
 ### 2. Install Dependencies
@@ -235,7 +235,7 @@ eas build --platform ios
 
 ## Project Structure
 
-SACN-TESIS-FRONTEND/
+kawsayar-frontend/
 ├── app/ # Main application screens
 │ ├── \_layout.tsx # Root layout with navigation
 │ ├── index.tsx # Landing/splash screen
@@ -290,7 +290,7 @@ SACN-TESIS-FRONTEND/
 
 ### Backend Requirements
 
-This frontend application requires the SACN backend server to be running. The backend should provide:
+This frontend application requires the kawsayar backend server to be running. The backend should provide:
 
 1. User Authentication API
    - Registration with email verification
@@ -353,7 +353,7 @@ Email: chiscolpatazcajuandavid@gmail.com
 
 ## Project Screenshots
 
-Here are some screenshots of the SACN app:
+Here are some screenshots of the kawsayar app:
 
 <div align="center">
 

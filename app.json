@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "SACN",
-    "slug": "SACN",
+    "name": "kawsayar",
+    "slug": "kawsayar",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "sacn",
+    "scheme": "kawsayar",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-     "splash": {
+    "splash": {
       "image": "./assets/images/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#1E1E2C"
@@ -22,7 +22,6 @@
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#1E1E2C"
       }
-
     },
     "android": {
       "adaptiveIcon": {
