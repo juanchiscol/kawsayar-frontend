@@ -42,3 +42,31 @@ app-example
 # generated native folders
 /ios
 /android
+
+# API configuration (contains sensitive IPs and endpoints)
+apis/apis.tsx
+
+# User uploaded photos and test images
+fotos/
+
+# But keep asset images
+!assets/**/*.jpg
+!assets/**/*.jpeg
+!assets/**/*.png
+!assets/**/*.avif
+
+# Logs
+*.log
+
+# OS specific
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test coverage
+coverage/

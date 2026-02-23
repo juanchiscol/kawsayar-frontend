@@ -3,7 +3,10 @@ import { RefObject } from 'react';
 import { View } from 'react-native';
 import { captureRef } from 'react-native-view-shot';
 
-const ip = "192.168.15.11"; // Reemplaza con la IP de tu servidor backend
+// ⚠️ IMPORTANT: Copy this file to apis.tsx and replace with your actual backend IP
+// Example: const ip = "192.168.1.100"; or "api.yourserver.com"
+const ip = "YOUR_BACKEND_IP_HERE"; // 🔧 Replace with your backend server IP
+
 export const handleEmailVerification = async (email: string, dni: string) => {
   try {
     const response = await fetch(`http://${ip}:3000/users/forgot_validate`, {
@@ -325,4 +328,3 @@ export const recortarImagen = async (imageContainerRef: RefObject<View>) => {
   }
 
 }
-
