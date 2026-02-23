@@ -50,6 +50,7 @@ SACN (Sistema de Detección de Anemia) es una aplicación móvil de vanguardia q
 ## Características
 
 ### Funcionalidad Principal
+
 - Autenticación segura: Registro de usuario, inicio de sesión y recuperación de contraseña
 - Captura de imagen: Captura de imágenes conjuntivales de alta calidad con guía
 - Detección con IA: Predicción de anemia basada en aprendizaje automático
@@ -57,6 +58,7 @@ SACN (Sistema de Detección de Anemia) es una aplicación móvil de vanguardia q
 - Visualización de resultados: Gráficos interactivos e indicadores de nivel de anemia
 
 ### Experiencia de Usuario
+
 - Gestión de perfiles: Crea y administra múltiples perfiles de usuario
 - Historial médico: Rastrea todos los exámenes de anemia a lo largo del tiempo
 - Exportación a PDF: Genera informes médicos profesionales
@@ -65,6 +67,7 @@ SACN (Sistema de Detección de Anemia) es una aplicación móvil de vanguardia q
 - Soporte de temas: Modo oscuro y claro
 
 ### Monitoreo de Salud
+
 - Seguimiento de progreso: Visualiza tendencias de hemoglobina a lo largo del tiempo
 - Recomendaciones personalizadas: Obtén consejos de salud adaptados
 - Notificaciones: Recordatorios para chequeos regulares
@@ -72,6 +75,7 @@ SACN (Sistema de Detección de Anemia) es una aplicación móvil de vanguardia q
 ## Stack Tecnológico
 
 ### Frontend
+
 - Framework: [React Native](https://reactnative.dev/) (0.81.4)
 - Plataforma: [Expo](https://expo.dev/) (~54.0)
 - Lenguaje: TypeScript (5.x)
@@ -81,6 +85,7 @@ SACN (Sistema de Detección de Anemia) es una aplicación móvil de vanguardia q
 - Animaciones: react-native-reanimated, react-native-animatable
 
 ### Librerías Clave
+
 - @react-native-picker/picker: Selección de fecha y opciones
 - expo-image-picker: Integración de cámara y galería
 - expo-image-manipulator: Procesamiento de imágenes
@@ -90,6 +95,7 @@ SACN (Sistema de Detección de Anemia) es una aplicación móvil de vanguardia q
 - @google/genai: Integración de chatbot con IA
 
 ### Integración Backend
+
 - Comunicación con API RESTful
 - Carga de imágenes con multipart/form-data
 - Autenticación JWT (si aplica)
@@ -108,6 +114,7 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 - Servidor Backend: API backend de SACN en ejecución (ver [Integración de API](#integración-de-api))
 
 ### Opcional (para compilaciones nativas)
+
 - Android Studio: Para desarrollo en Android
 - Xcode: Para desarrollo en iOS (solo macOS)
 
@@ -157,7 +164,7 @@ La aplicación se comunica con los siguientes servicios backend:
 - /users/forgot_password_recuperar - Recuperación de contraseña
 - /predict/ - Predicción de anemia
 - /validate/validate - Validación de imagen conjuntival
-- /profiles/* - Gestión de perfiles
+- /profiles/\* - Gestión de perfiles
 - /crop/crop - Recorte de imagen
 
 ### Variables de Entorno
@@ -189,21 +196,25 @@ npx expo start
 ### Ejecutar en Dispositivos
 
 Opción 1: Expo Go (Más Fácil)
+
 1. Abre la aplicación Expo Go en tu dispositivo
 2. Escanea el código QR desde la terminal
 3. La aplicación se cargará automáticamente
 
 Opción 2: Emulador de Android
+
 ```bash
 npm run android
 ```
 
 Opción 3: Simulador de iOS (solo macOS)
+
 ```bash
 npm run ios
 ```
 
 Opción 4: Navegador Web
+
 ```bash
 npm run web
 ```
@@ -227,55 +238,55 @@ eas build --platform ios
 ## Estructura del Proyecto
 
 SACN-TESIS-FRONTEND/
-├── app/                          # Pantallas principales de la aplicación
-│   ├── _layout.tsx                  # Layout raíz con navegación
-│   ├── index.tsx                    # Pantalla de inicio/splash
-│   ├── Login.tsx                    # Pantalla de autenticación
-│   ├── Registrer.tsx                # Registro de usuario
-│   ├── profiles.tsx                 # Selección de perfil
-│   ├── prediction.tsx               # Captura de imagen y predicción
-│   ├── result.tsx                   # Resultados de predicción
-│   ├── detalle.tsx                  # Detalles del resultado
-│   ├── AppContext.tsx               # Gestión de estado global
-│   └── (tabs)/                      # Pantallas de navegación por pestañas
-│       ├── homeScreen.tsx           # Panel de control
-│       ├── historial.tsx            # Historial médico
-│       ├── chatbot.tsx              # Asistente con IA
-│       ├── education.tsx            # Contenido educativo
-│       └── perfil.tsx               # Perfil de usuario
+├── app/ # Pantallas principales de la aplicación
+│ ├── \_layout.tsx # Layout raíz con navegación
+│ ├── index.tsx # Pantalla de inicio/splash
+│ ├── Login.tsx # Pantalla de autenticación
+│ ├── Registrer.tsx # Registro de usuario
+│ ├── profiles.tsx # Selección de perfil
+│ ├── prediction.tsx # Captura de imagen y predicción
+│ ├── result.tsx # Resultados de predicción
+│ ├── detalle.tsx # Detalles del resultado
+│ ├── AppContext.tsx # Gestión de estado global
+│ └── (tabs)/ # Pantallas de navegación por pestañas
+│ ├── homeScreen.tsx # Panel de control
+│ ├── historial.tsx # Historial médico
+│ ├── chatbot.tsx # Asistente con IA
+│ ├── education.tsx # Contenido educativo
+│ └── perfil.tsx # Perfil de usuario
 │
-├── apis/                         # Integración de API backend
-│   └── apis.tsx                     # Funciones de servicio de API
+├── apis/ # Integración de API backend
+│ └── apis.tsx # Funciones de servicio de API
 │
-├── components/                   # Componentes reutilizables
-│   ├── Button.tsx                   # Componente de botón personalizado
-│   ├── FormInput.tsx                # Componente de campo de entrada
-│   ├── DateInput.tsx                # Componente de selector de fecha
-│   ├── SelectedInput.tsx            # Componente de menú desplegable
-│   ├── AnemiaChart.tsx              # Visualización de gráficos
-│   ├── ExportToPDF.tsx              # Generación de PDF
-│   ├── ProgressBar.tsx              # Indicador de progreso
-│   ├── Videos.tsx                   # Reproductor de video
-│   ├── Camara/                      # Componentes de cámara
-│   │   ├── ImagePickerButton.tsx
-│   │   └── DraggableImage.tsx
-│   ├── Modals/                      # Diálogos modales
-│   │   ├── CustomModal.tsx
-│   │   ├── ModalForms.tsx
-│   │   ├── ModalProfiles.tsx
-│   │   └── RecommendationOverlay.tsx
-│   └── ui/                          # Utilidades de UI
+├── components/ # Componentes reutilizables
+│ ├── Button.tsx # Componente de botón personalizado
+│ ├── FormInput.tsx # Componente de campo de entrada
+│ ├── DateInput.tsx # Componente de selector de fecha
+│ ├── SelectedInput.tsx # Componente de menú desplegable
+│ ├── AnemiaChart.tsx # Visualización de gráficos
+│ ├── ExportToPDF.tsx # Generación de PDF
+│ ├── ProgressBar.tsx # Indicador de progreso
+│ ├── Videos.tsx # Reproductor de video
+│ ├── Camara/ # Componentes de cámara
+│ │ ├── ImagePickerButton.tsx
+│ │ └── DraggableImage.tsx
+│ ├── Modals/ # Diálogos modales
+│ │ ├── CustomModal.tsx
+│ │ ├── ModalForms.tsx
+│ │ ├── ModalProfiles.tsx
+│ │ └── RecommendationOverlay.tsx
+│ └── ui/ # Utilidades de UI
 │
-├── styles/                       # Estilos específicos de pantalla
-├── constants/                    # Constantes y temas de la app
-├── hooks/                        # Hooks personalizados de React
-├── lib/                          # Librerías de utilidades
-├── assets/                       # Imágenes, fuentes, íconos
+├── styles/ # Estilos específicos de pantalla
+├── constants/ # Constantes y temas de la app
+├── hooks/ # Hooks personalizados de React
+├── lib/ # Librerías de utilidades
+├── assets/ # Imágenes, fuentes, íconos
 └── Archivos de configuración
-    ├── package.json
-    ├── tsconfig.json
-    ├── app.json
-    └── eslint.config.js
+├── package.json
+├── tsconfig.json
+├── app.json
+└── eslint.config.js
 
 ## Integración de API
 

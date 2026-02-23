@@ -50,6 +50,7 @@ SACN (Anemia Detection System) is a cutting-edge mobile application that leverag
 ## Features
 
 ### Core Functionality
+
 - Secure Authentication: User registration, login, and password recovery
 - Image Capture: High-quality conjunctival image capture with guidance
 - AI Detection: Machine learning-based anemia prediction
@@ -57,6 +58,7 @@ SACN (Anemia Detection System) is a cutting-edge mobile application that leverag
 - Results Visualization: Interactive charts and anemia level indicators
 
 ### User Experience
+
 - Profile Management: Create and manage multiple user profiles
 - Medical History: Track all anemia screenings over time
 - PDF Export: Generate professional medical reports
@@ -65,6 +67,7 @@ SACN (Anemia Detection System) is a cutting-edge mobile application that leverag
 - Theme Support: Dark and light mode
 
 ### Health Monitoring
+
 - Progress Tracking: Visualize hemoglobin trends over time
 - Personalized Recommendations: Get tailored health advice
 - Notifications: Reminders for regular checkups
@@ -72,6 +75,7 @@ SACN (Anemia Detection System) is a cutting-edge mobile application that leverag
 ## Tech Stack
 
 ### Frontend
+
 - Framework: [React Native](https://reactnative.dev/) (0.81.4)
 - Platform: [Expo](https://expo.dev/) (~54.0)
 - Language: TypeScript (5.x)
@@ -81,6 +85,7 @@ SACN (Anemia Detection System) is a cutting-edge mobile application that leverag
 - Animations: react-native-reanimated, react-native-animatable
 
 ### Key Libraries
+
 - @react-native-picker/picker: Date and option selection
 - expo-image-picker: Camera and gallery integration
 - expo-image-manipulator: Image processing
@@ -90,6 +95,7 @@ SACN (Anemia Detection System) is a cutting-edge mobile application that leverag
 - @google/genai: AI chatbot integration
 
 ### Backend Integration
+
 - RESTful API communication
 - Image upload with multipart/form-data
 - JWT authentication (if applicable)
@@ -108,6 +114,7 @@ Before you begin, ensure you have the following installed:
 - Backend Server: SACN backend API running (see [API Integration](#api-integration))
 
 ### Optional (for native builds)
+
 - Android Studio: For Android development
 - Xcode: For iOS development (macOS only)
 
@@ -157,7 +164,7 @@ The application communicates with the following backend services:
 - /users/forgot_password_recuperar - Password recovery
 - /predict/ - Anemia prediction
 - /validate/validate - Conjunctival image validation
-- /profiles/* - Profile management
+- /profiles/\* - Profile management
 - /crop/crop - Image cropping
 
 ### Environment Variables
@@ -189,21 +196,25 @@ npx expo start
 ### Running on Devices
 
 Option 1: Expo Go (Easiest)
+
 1. Open Expo Go app on your device
 2. Scan the QR code from the terminal
 3. App will load automatically
 
 Option 2: Android Emulator
+
 ```bash
 npm run android
 ```
 
 Option 3: iOS Simulator (macOS only)
+
 ```bash
 npm run ios
 ```
 
 Option 4: Web Browser
+
 ```bash
 npm run web
 ```
@@ -227,55 +238,55 @@ eas build --platform ios
 ## Project Structure
 
 SACN-TESIS-FRONTEND/
-├── app/                          # Main application screens
-│   ├── _layout.tsx                  # Root layout with navigation
-│   ├── index.tsx                    # Landing/splash screen
-│   ├── Login.tsx                    # Authentication screen
-│   ├── Registrer.tsx                # User registration
-│   ├── profiles.tsx                 # Profile selection
-│   ├── prediction.tsx               # Image capture & prediction
-│   ├── result.tsx                   # Prediction results
-│   ├── detalle.tsx                  # Result details
-│   ├── AppContext.tsx               # Global state management
-│   └── (tabs)/                      # Tab navigation screens
-│       ├── homeScreen.tsx           # Dashboard
-│       ├── historial.tsx            # Medical history
-│       ├── chatbot.tsx              # AI assistant
-│       ├── education.tsx            # Educational content
-│       └── perfil.tsx               # User profile
+├── app/ # Main application screens
+│ ├── \_layout.tsx # Root layout with navigation
+│ ├── index.tsx # Landing/splash screen
+│ ├── Login.tsx # Authentication screen
+│ ├── Registrer.tsx # User registration
+│ ├── profiles.tsx # Profile selection
+│ ├── prediction.tsx # Image capture & prediction
+│ ├── result.tsx # Prediction results
+│ ├── detalle.tsx # Result details
+│ ├── AppContext.tsx # Global state management
+│ └── (tabs)/ # Tab navigation screens
+│ ├── homeScreen.tsx # Dashboard
+│ ├── historial.tsx # Medical history
+│ ├── chatbot.tsx # AI assistant
+│ ├── education.tsx # Educational content
+│ └── perfil.tsx # User profile
 │
-├── apis/                         # Backend API integration
-│   └── apis.tsx                     # API service functions
+├── apis/ # Backend API integration
+│ └── apis.tsx # API service functions
 │
-├── components/                   # Reusable components
-│   ├── Button.tsx                   # Custom button component
-│   ├── FormInput.tsx                # Input field component
-│   ├── DateInput.tsx                # Date picker component
-│   ├── SelectedInput.tsx            # Dropdown component
-│   ├── AnemiaChart.tsx              # Chart visualization
-│   ├── ExportToPDF.tsx              # PDF generation
-│   ├── ProgressBar.tsx              # Progress indicator
-│   ├── Videos.tsx                   # Video player
-│   ├── Camara/                      # Camera components
-│   │   ├── ImagePickerButton.tsx
-│   │   └── DraggableImage.tsx
-│   ├── Modals/                      # Modal dialogs
-│   │   ├── CustomModal.tsx
-│   │   ├── ModalForms.tsx
-│   │   ├── ModalProfiles.tsx
-│   │   └── RecommendationOverlay.tsx
-│   └── ui/                          # UI utilities
+├── components/ # Reusable components
+│ ├── Button.tsx # Custom button component
+│ ├── FormInput.tsx # Input field component
+│ ├── DateInput.tsx # Date picker component
+│ ├── SelectedInput.tsx # Dropdown component
+│ ├── AnemiaChart.tsx # Chart visualization
+│ ├── ExportToPDF.tsx # PDF generation
+│ ├── ProgressBar.tsx # Progress indicator
+│ ├── Videos.tsx # Video player
+│ ├── Camara/ # Camera components
+│ │ ├── ImagePickerButton.tsx
+│ │ └── DraggableImage.tsx
+│ ├── Modals/ # Modal dialogs
+│ │ ├── CustomModal.tsx
+│ │ ├── ModalForms.tsx
+│ │ ├── ModalProfiles.tsx
+│ │ └── RecommendationOverlay.tsx
+│ └── ui/ # UI utilities
 │
-├── styles/                       # Screen-specific styles
-├── constants/                    # App constants & themes
-├── hooks/                        # Custom React hooks
-├── lib/                          # Utility libraries
-├── assets/                       # Images, fonts, icons
+├── styles/ # Screen-specific styles
+├── constants/ # App constants & themes
+├── hooks/ # Custom React hooks
+├── lib/ # Utility libraries
+├── assets/ # Images, fonts, icons
 └── Configuration files
-    ├── package.json
-    ├── tsconfig.json
-    ├── app.json
-    └── eslint.config.js
+├── package.json
+├── tsconfig.json
+├── app.json
+└── eslint.config.js
 
 ## API Integration
 
