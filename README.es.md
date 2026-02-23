@@ -14,8 +14,6 @@ Una aplicación móvil inteligente para la detección no invasiva de anemia medi
 
 [🇬🇧 English](./README.md) | [Características](#características) | [Instalación](#instalación) | [Uso](#uso)
 
-<img src="./assets/images/anemia-fondo.jpg" alt="SACN App" width="600"/>
-
 </div>
 
 ---

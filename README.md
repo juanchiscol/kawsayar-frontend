@@ -14,8 +14,6 @@ An intelligent mobile application for non-invasive anemia detection using AI-pow
 
 [Español](./README.es.md) | [Features](#features) | [Installation](#installation) | [Usage](#usage)
 
-<img src="./assets/images/anemia-fondo.jpg" alt="SACN App" width="600"/>
-
 </div>
 
 ---
