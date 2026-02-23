@@ -1,6 +1,8 @@
-# 🩺 SACN - Sistema de Detección de Anemia
+# SACN - Sistema de Detección de Anemia
 
 <div align="center">
+
+<img src="./assets/images/logo-anemia.png" alt="SACN Logo" width="200"/>
 
 ![Versión](https://img.shields.io/badge/versi%C3%B3n-1.0.0-blue.svg)
 ![Expo](https://img.shields.io/badge/Expo-~54.0-000020.svg?style=flat&logo=expo)
@@ -8,113 +10,108 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg?style=flat&logo=typescript)
 ![Licencia](https://img.shields.io/badge/licencia-MIT-green.svg)
 
-_Una aplicación móvil inteligente para la detección no invasiva de anemia mediante análisis de imágenes con IA_
+Una aplicación móvil inteligente para la detección no invasiva de anemia mediante análisis de imágenes con IA
 
-[🇬🇧 English](./README.md) | [Características](#-características) | [Instalación](#-instalación) | [Uso](#-uso)
+[🇬🇧 English](./README.md) | [Características](#características) | [Instalación](#instalación) | [Uso](#uso)
+
+<img src="./assets/images/anemia-fondo.jpg" alt="SACN App" width="600"/>
 
 </div>
 
 ---
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
-- [Acerca de](#-acerca-de)
-- [Características](#-características)
-- [Stack Tecnológico](#-stack-tecnológico)
-- [Prerequisitos](#-prerequisitos)
-- [Instalación](#-instalación)
-- [Configuración](#-configuración)
-- [Uso](#-uso)
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-- [Integración de API](#-integración-de-api)
-- [Contribuir](#-contribuir)
-- [Licencia](#-licencia)
+- [Acerca de](#acerca-de)
+- [Características](#características)
+- [Stack Tecnológico](#stack-tecnológico)
+- [Prerequisitos](#prerequisitos)
+- [Instalación](#instalación)
+- [Configuración](#configuración)
+- [Uso](#uso)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Integración de API](#integración-de-api)
+- [Contribuir](#contribuir)
+- [Licencia](#licencia)
 
-## 🎯 Acerca de
+## Acerca de
 
-**SACN (Sistema de Detección de Anemia)** es una aplicación móvil de vanguardia que aprovecha la inteligencia artificial y la visión por computadora para detectar anemia mediante el análisis de imágenes conjuntivales. La aplicación proporciona un método rápido, no invasivo y accesible para el cribado preliminar de anemia, haciendo la atención médica más accesible para todos.
+SACN (Sistema de Detección de Anemia) es una aplicación móvil de vanguardia que aprovecha la inteligencia artificial y la visión por computadora para detectar anemia mediante el análisis de imágenes conjuntivales. La aplicación proporciona un método rápido, no invasivo y accesible para el cribado preliminar de anemia, haciendo la atención médica más accesible para todos.
 
 ### ¿Por qué SACN?
 
-- 🏥 **No invasivo**: No se requieren análisis de sangre
-- 🚀 **Resultados Rápidos**: Obtén predicciones en segundos
-- 📱 **Mobile-first**: Disponible en cualquier lugar, en cualquier momento
-- 🧠 **Potenciado por IA**: Utiliza aprendizaje automático para detección precisa
-- 📊 **Seguimiento**: Monitorea el progreso de salud a lo largo del tiempo
-- 👥 **Multi-Perfil**: Gestiona múltiples miembros de la familia
+- No invasivo: No se requieren análisis de sangre
+- Resultados rápidos: Obtén predicciones en segundos
+- Mobile-first: Disponible en cualquier lugar, en cualquier momento
+- Potenciado por IA: Utiliza aprendizaje automático para detección precisa
+- Seguimiento: Monitorea el progreso de salud a lo largo del tiempo
+- Multi-Perfil: Gestiona múltiples miembros de la familia
 
-## ✨ Características
+## Características
 
 ### Funcionalidad Principal
-
-- 🔐 **Autenticación Segura**: Registro de usuario, inicio de sesión y recuperación de contraseña
-- 📸 **Captura de Imagen**: Captura de imágenes conjuntivales de alta calidad con guía
-- 🤖 **Detección con IA**: Predicción de anemia basada en aprendizaje automático
-- ✂️ **Recorte Inteligente**: Extracción automática de la región de interés
-- 📈 **Visualización de Resultados**: Gráficos interactivos e indicadores de nivel de anemia
+- Autenticación segura: Registro de usuario, inicio de sesión y recuperación de contraseña
+- Captura de imagen: Captura de imágenes conjuntivales de alta calidad con guía
+- Detección con IA: Predicción de anemia basada en aprendizaje automático
+- Recorte inteligente: Extracción automática de la región de interés
+- Visualización de resultados: Gráficos interactivos e indicadores de nivel de anemia
 
 ### Experiencia de Usuario
-
-- 👤 **Gestión de Perfiles**: Crea y administra múltiples perfiles de usuario
-- 📜 **Historial Médico**: Rastrea todos los exámenes de anemia a lo largo del tiempo
-- 📄 **Exportación a PDF**: Genera informes médicos profesionales
-- 💬 **Chatbot con IA**: Asistente educativo para preguntas relacionadas con la anemia
-- 🎓 **Contenido Educativo**: Recursos en video sobre prevención y tratamiento de anemia
-- 🌓 **Soporte de Temas**: Modo oscuro y claro
+- Gestión de perfiles: Crea y administra múltiples perfiles de usuario
+- Historial médico: Rastrea todos los exámenes de anemia a lo largo del tiempo
+- Exportación a PDF: Genera informes médicos profesionales
+- Chatbot con IA: Asistente educativo para preguntas relacionadas con la anemia
+- Contenido educativo: Recursos en video sobre prevención y tratamiento de anemia
+- Soporte de temas: Modo oscuro y claro
 
 ### Monitoreo de Salud
+- Seguimiento de progreso: Visualiza tendencias de hemoglobina a lo largo del tiempo
+- Recomendaciones personalizadas: Obtén consejos de salud adaptados
+- Notificaciones: Recordatorios para chequeos regulares
 
-- 📊 **Seguimiento de Progreso**: Visualiza tendencias de hemoglobina a lo largo del tiempo
-- 🎯 **Recomendaciones Personalizadas**: Obtén consejos de salud adaptados
-- 📱 **Notificaciones**: Recordatorios para chequeos regulares
-
-## 🛠 Stack Tecnológico
+## Stack Tecnológico
 
 ### Frontend
-
-- **Framework**: [React Native](https://reactnative.dev/) (0.81.4)
-- **Plataforma**: [Expo](https://expo.dev/) (~54.0)
-- **Lenguaje**: TypeScript (5.x)
-- **Navegación**: Expo Router (enrutamiento basado en archivos)
-- **Componentes UI**: Componentes temáticos personalizados
-- **Gráficos**: react-native-chart-kit
-- **Animaciones**: react-native-reanimated, react-native-animatable
+- Framework: [React Native](https://reactnative.dev/) (0.81.4)
+- Plataforma: [Expo](https://expo.dev/) (~54.0)
+- Lenguaje: TypeScript (5.x)
+- Navegación: Expo Router (enrutamiento basado en archivos)
+- Componentes UI: Componentes temáticos personalizados
+- Gráficos: react-native-chart-kit
+- Animaciones: react-native-reanimated, react-native-animatable
 
 ### Librerías Clave
-
-- `@react-native-picker/picker`: Selección de fecha y opciones
-- `expo-image-picker`: Integración de cámara y galería
-- `expo-image-manipulator`: Procesamiento de imágenes
-- `expo-print`: Generación de PDF
-- `react-native-view-shot`: Captura de pantalla
-- `moment`: Manipulación de fechas
-- `@google/genai`: Integración de chatbot con IA
+- @react-native-picker/picker: Selección de fecha y opciones
+- expo-image-picker: Integración de cámara y galería
+- expo-image-manipulator: Procesamiento de imágenes
+- expo-print: Generación de PDF
+- react-native-view-shot: Captura de pantalla
+- moment: Manipulación de fechas
+- @google/genai: Integración de chatbot con IA
 
 ### Integración Backend
-
 - Comunicación con API RESTful
 - Carga de imágenes con multipart/form-data
 - Autenticación JWT (si aplica)
 
-## 📦 Prerequisitos
+## Prerequisitos
 
 Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-- **Node.js**: v18 o superior ([Descargar](https://nodejs.org/))
-- **npm** o **yarn**: Gestor de paquetes
-- **Expo CLI**: Instalar globalmente
+- Node.js: v18 o superior ([Descargar](https://nodejs.org/))
+- npm o yarn: Gestor de paquetes
+- Expo CLI: Instalar globalmente
   ```bash
   npm install -g expo-cli
   ```
-- **App Expo Go**: Instalar en tu dispositivo móvil ([iOS](https://apps.apple.com/app/expo-go/id982107779) | [Android](https://play.google.com/store/apps/details?id=host.exp.exponent))
-- **Servidor Backend**: API backend de SACN en ejecución (ver [Integración de API](#-integración-de-api))
+- App Expo Go: Instalar en tu dispositivo móvil ([iOS](https://apps.apple.com/app/expo-go/id982107779) | [Android](https://play.google.com/store/apps/details?id=host.exp.exponent))
+- Servidor Backend: API backend de SACN en ejecución (ver [Integración de API](#integración-de-api))
 
 ### Opcional (para compilaciones nativas)
+- Android Studio: Para desarrollo en Android
+- Xcode: Para desarrollo en iOS (solo macOS)
 
-- **Android Studio**: Para desarrollo en Android
-- **Xcode**: Para desarrollo en iOS (solo macOS)
-
-## 🚀 Instalación
+## Instalación
 
 ### 1. Clonar el Repositorio
 
@@ -149,19 +146,19 @@ Edita `apis/apis.tsx` y establece la IP de tu servidor backend:
 const ip = "TU_IP_BACKEND"; // ej: "192.168.1.100" o "api.tuservidor.com"
 ```
 
-## ⚙️ Configuración
+## Configuración
 
 ### Endpoints de la API
 
 La aplicación se comunica con los siguientes servicios backend:
 
-- `/users/register` - Registro de usuario
-- `/users/login` - Autenticación de usuario
-- `/users/forgot_password_recuperar` - Recuperación de contraseña
-- `/predict/` - Predicción de anemia
-- `/validate/validate` - Validación de imagen conjuntival
-- `/profiles/*` - Gestión de perfiles
-- `/crop/crop` - Recorte de imagen
+- /users/register - Registro de usuario
+- /users/login - Autenticación de usuario
+- /users/forgot_password_recuperar - Recuperación de contraseña
+- /predict/ - Predicción de anemia
+- /validate/validate - Validación de imagen conjuntival
+- /profiles/* - Gestión de perfiles
+- /crop/crop - Recorte de imagen
 
 ### Variables de Entorno
 
@@ -173,7 +170,7 @@ API_BASE_URL=http://tu-url-api.com
 API_PORT=3000
 ```
 
-## 🎮 Uso
+## Uso
 
 ### Modo de Desarrollo
 
@@ -191,26 +188,22 @@ npx expo start
 
 ### Ejecutar en Dispositivos
 
-**Opción 1: Expo Go (Más Fácil)**
-
+Opción 1: Expo Go (Más Fácil)
 1. Abre la aplicación Expo Go en tu dispositivo
 2. Escanea el código QR desde la terminal
 3. La aplicación se cargará automáticamente
 
-**Opción 2: Emulador de Android**
-
+Opción 2: Emulador de Android
 ```bash
 npm run android
 ```
 
-**Opción 3: Simulador de iOS (solo macOS)**
-
+Opción 3: Simulador de iOS (solo macOS)
 ```bash
 npm run ios
 ```
 
-**Opción 4: Navegador Web**
-
+Opción 4: Navegador Web
 ```bash
 npm run web
 ```
@@ -231,11 +224,10 @@ eas build --platform android
 eas build --platform ios
 ```
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
-```
 SACN-TESIS-FRONTEND/
-├── 📱 app/                          # Pantallas principales de la aplicación
+├── app/                          # Pantallas principales de la aplicación
 │   ├── _layout.tsx                  # Layout raíz con navegación
 │   ├── index.tsx                    # Pantalla de inicio/splash
 │   ├── Login.tsx                    # Pantalla de autenticación
@@ -252,10 +244,10 @@ SACN-TESIS-FRONTEND/
 │       ├── education.tsx            # Contenido educativo
 │       └── perfil.tsx               # Perfil de usuario
 │
-├── 🔌 apis/                         # Integración de API backend
+├── apis/                         # Integración de API backend
 │   └── apis.tsx                     # Funciones de servicio de API
 │
-├── 🎨 components/                   # Componentes reutilizables
+├── components/                   # Componentes reutilizables
 │   ├── Button.tsx                   # Componente de botón personalizado
 │   ├── FormInput.tsx                # Componente de campo de entrada
 │   ├── DateInput.tsx                # Componente de selector de fecha
@@ -274,39 +266,38 @@ SACN-TESIS-FRONTEND/
 │   │   └── RecommendationOverlay.tsx
 │   └── ui/                          # Utilidades de UI
 │
-├── 🎨 styles/                       # Estilos específicos de pantalla
-├── 🎭 constants/                    # Constantes y temas de la app
-├── 🪝 hooks/                        # Hooks personalizados de React
-├── 📚 lib/                          # Librerías de utilidades
-├── 🖼️ assets/                       # Imágenes, fuentes, íconos
-└── 📄 Archivos de configuración
+├── styles/                       # Estilos específicos de pantalla
+├── constants/                    # Constantes y temas de la app
+├── hooks/                        # Hooks personalizados de React
+├── lib/                          # Librerías de utilidades
+├── assets/                       # Imágenes, fuentes, íconos
+└── Archivos de configuración
     ├── package.json
     ├── tsconfig.json
     ├── app.json
     └── eslint.config.js
-```
 
-## 🔗 Integración de API
+## Integración de API
 
 ### Requisitos del Backend
 
 Esta aplicación frontend requiere que el servidor backend de SACN esté en ejecución. El backend debe proporcionar:
 
-1. **API de Autenticación de Usuario**
+1. API de Autenticación de Usuario
    - Registro con verificación de correo electrónico
    - Inicio/Cierre de sesión
    - Recuperación de contraseña
 
-2. **API de Predicción**
+2. API de Predicción
    - Validación de imagen (¿es una imagen conjuntival válida?)
    - Predicción de anemia usando modelo ML
    - Almacenamiento de controles/exámenes
 
-3. **API de Gestión de Perfiles**
+3. API de Gestión de Perfiles
    - Crear, leer, actualizar, eliminar perfiles de usuario
    - Recuperar datos históricos por perfil
 
-4. **API de Procesamiento de Imágenes**
+4. API de Procesamiento de Imágenes
    - Recorte automático de la región de interés
    - Preprocesamiento de imágenes
 
@@ -319,7 +310,7 @@ Asegúrate de que tu backend esté en ejecución y accesible:
 http://<TU_IP>:3000
 ```
 
-## 🤝 Contribuir
+## Contribuir
 
 ¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
 
@@ -337,35 +328,30 @@ http://<TU_IP>:3000
 - Prueba en iOS y Android
 - Actualiza la documentación cuando sea necesario
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo LICENSE para más detalles.
 
-## 👥 Autores
+## Autores
 
-**Juan Chiscol** - _Proyecto de Tesis_
+Juan Chiscol - Proyecto de Tesis
 
-## 🙏 Agradecimientos
-
-- Asesores médicos y profesionales de la salud
-- Contribuidores del modelo de Machine Learning
-- Comunidades de Expo y React Native
-- Beta testers y primeros usuarios
-
-## 📞 Soporte
+## Soporte
 
 Para preguntas, problemas o sugerencias:
 
-- 📧 Email: [tu-email@ejemplo.com]
-- 🐛 Problemas: [GitHub Issues](enlace-a-issues)
-- 💬 Discusiones: [GitHub Discussions](enlace-a-discussions)
+Email: chiscolpatazcajuandavid@gmail.com
 
----
+## Fotos del Proyecto
+
+A continuación algunas capturas de pantalla de la app SACN:
 
 <div align="center">
 
-**Hecho con ❤️ para una mejor accesibilidad en salud**
-
-⭐ ¡Dale una estrella a este repo si te resulta útil!
+<img src="./fotos/Welcome.jpeg" alt="Pantalla de bienvenida" width="300"/>
+<img src="./fotos/Home.jpeg" alt="Pantalla principal" width="300"/>
+<img src="./fotos/Profiles.jpeg" alt="Selección de perfiles" width="300"/>
+<img src="./fotos/Result_anemic.jpeg" alt="Resultado de predicción" width="300"/>
+<img src="./fotos/Chat_IA.jpeg" alt="Chat IA educativo" width="300"/>
 
 </div>

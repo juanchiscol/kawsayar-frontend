@@ -1,6 +1,8 @@
-# 🩺 SACN - Anemia Detection System
+# SACN - Anemia Detection System
 
 <div align="center">
+
+<img src="./assets/images/logo-anemia.png" alt="SACN Logo" width="200"/>
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Expo](https://img.shields.io/badge/Expo-~54.0-000020.svg?style=flat&logo=expo)
@@ -8,113 +10,108 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg?style=flat&logo=typescript)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-_An intelligent mobile application for non-invasive anemia detection using AI-powered image analysis_
+An intelligent mobile application for non-invasive anemia detection using AI-powered image analysis
 
-[🇪🇸 Español](./README.es.md) | [Features](#-features) | [Installation](#-installation) | [Usage](#-usage)
+[Español](./README.es.md) | [Features](#features) | [Installation](#installation) | [Usage](#usage)
+
+<img src="./assets/images/anemia-fondo.jpg" alt="SACN App" width="600"/>
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [About](#-about)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [Project Structure](#-project-structure)
-- [API Integration](#-api-integration)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [API Integration](#api-integration)
+- [Contributing](#contributing)
+- [License](#license)
 
-## 🎯 About
+## About
 
-**SACN (Sistema de Detección de Anemia)** is a cutting-edge mobile application that leverages artificial intelligence and computer vision to detect anemia through conjunctival image analysis. The app provides a quick, non-invasive, and accessible method for preliminary anemia screening, making healthcare more accessible to everyone.
+SACN (Anemia Detection System) is a cutting-edge mobile application that leverages artificial intelligence and computer vision to detect anemia through conjunctival image analysis. The app provides a quick, non-invasive, and accessible method for preliminary anemia screening, making healthcare more accessible to everyone.
 
 ### Why SACN?
 
-- 🏥 **Non-invasive**: No blood tests required
-- 🚀 **Fast Results**: Get predictions in seconds
-- 📱 **Mobile-first**: Available anywhere, anytime
-- 🧠 **AI-Powered**: Uses machine learning for accurate detection
-- 📊 **Tracking**: Monitor health progress over time
-- 👥 **Multi-Profile**: Manage multiple family members
+- Non-invasive: No blood tests required
+- Fast Results: Get predictions in seconds
+- Mobile-first: Available anywhere, anytime
+- AI-Powered: Uses machine learning for accurate detection
+- Tracking: Monitor health progress over time
+- Multi-Profile: Manage multiple family members
 
-## ✨ Features
+## Features
 
 ### Core Functionality
-
-- 🔐 **Secure Authentication**: User registration, login, and password recovery
-- 📸 **Image Capture**: High-quality conjunctival image capture with guidance
-- 🤖 **AI Detection**: Machine learning-based anemia prediction
-- ✂️ **Smart Cropping**: Automatic region of interest extraction
-- 📈 **Results Visualization**: Interactive charts and anemia level indicators
+- Secure Authentication: User registration, login, and password recovery
+- Image Capture: High-quality conjunctival image capture with guidance
+- AI Detection: Machine learning-based anemia prediction
+- Smart Cropping: Automatic region of interest extraction
+- Results Visualization: Interactive charts and anemia level indicators
 
 ### User Experience
-
-- 👤 **Profile Management**: Create and manage multiple user profiles
-- 📜 **Medical History**: Track all anemia screenings over time
-- 📄 **PDF Export**: Generate professional medical reports
-- 💬 **AI Chatbot**: Educational assistant for anemia-related questions
-- 🎓 **Educational Content**: Video resources about anemia prevention and treatment
-- 🌓 **Theme Support**: Dark and light mode
+- Profile Management: Create and manage multiple user profiles
+- Medical History: Track all anemia screenings over time
+- PDF Export: Generate professional medical reports
+- AI Chatbot: Educational assistant for anemia-related questions
+- Educational Content: Video resources about anemia prevention and treatment
+- Theme Support: Dark and light mode
 
 ### Health Monitoring
+- Progress Tracking: Visualize hemoglobin trends over time
+- Personalized Recommendations: Get tailored health advice
+- Notifications: Reminders for regular checkups
 
-- 📊 **Progress Tracking**: Visualize hemoglobin trends over time
-- 🎯 **Personalized Recommendations**: Get tailored health advice
-- 📱 **Notifications**: Reminders for regular checkups
-
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
-
-- **Framework**: [React Native](https://reactnative.dev/) (0.81.4)
-- **Platform**: [Expo](https://expo.dev/) (~54.0)
-- **Language**: TypeScript (5.x)
-- **Navigation**: Expo Router (file-based routing)
-- **UI Components**: Custom themed components
-- **Charts**: react-native-chart-kit
-- **Animations**: react-native-reanimated, react-native-animatable
+- Framework: [React Native](https://reactnative.dev/) (0.81.4)
+- Platform: [Expo](https://expo.dev/) (~54.0)
+- Language: TypeScript (5.x)
+- Navigation: Expo Router (file-based routing)
+- UI Components: Custom themed components
+- Charts: react-native-chart-kit
+- Animations: react-native-reanimated, react-native-animatable
 
 ### Key Libraries
-
-- `@react-native-picker/picker`: Date and option selection
-- `expo-image-picker`: Camera and gallery integration
-- `expo-image-manipulator`: Image processing
-- `expo-print`: PDF generation
-- `react-native-view-shot`: Screen capture
-- `moment`: Date manipulation
-- `@google/genai`: AI chatbot integration
+- @react-native-picker/picker: Date and option selection
+- expo-image-picker: Camera and gallery integration
+- expo-image-manipulator: Image processing
+- expo-print: PDF generation
+- react-native-view-shot: Screen capture
+- moment: Date manipulation
+- @google/genai: AI chatbot integration
 
 ### Backend Integration
-
 - RESTful API communication
 - Image upload with multipart/form-data
 - JWT authentication (if applicable)
 
-## 📦 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
-- **Node.js**: v18 or higher ([Download](https://nodejs.org/))
-- **npm** or **yarn**: Package manager
-- **Expo CLI**: Install globally
+- Node.js: v18 or higher ([Download](https://nodejs.org/))
+- npm or yarn: Package manager
+- Expo CLI: Install globally
   ```bash
   npm install -g expo-cli
   ```
-- **Expo Go App**: Install on your mobile device ([iOS](https://apps.apple.com/app/expo-go/id982107779) | [Android](https://play.google.com/store/apps/details?id=host.exp.exponent))
-- **Backend Server**: SACN backend API running (see [API Integration](#-api-integration))
+- Expo Go App: Install on your mobile device ([iOS](https://apps.apple.com/app/expo-go/id982107779) | [Android](https://play.google.com/store/apps/details?id=host.exp.exponent))
+- Backend Server: SACN backend API running (see [API Integration](#api-integration))
 
 ### Optional (for native builds)
+- Android Studio: For Android development
+- Xcode: For iOS development (macOS only)
 
-- **Android Studio**: For Android development
-- **Xcode**: For iOS development (macOS only)
-
-## 🚀 Installation
+## Installation
 
 ### 1. Clone the Repository
 
@@ -149,19 +146,19 @@ Edit `apis/apis.tsx` and set your backend server IP:
 const ip = "YOUR_BACKEND_IP"; // e.g., "192.168.1.100" or "api.yourserver.com"
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### API Endpoints
 
 The application communicates with the following backend services:
 
-- `/users/register` - User registration
-- `/users/login` - User authentication
-- `/users/forgot_password_recuperar` - Password recovery
-- `/predict/` - Anemia prediction
-- `/validate/validate` - Conjunctival image validation
-- `/profiles/*` - Profile management
-- `/crop/crop` - Image cropping
+- /users/register - User registration
+- /users/login - User authentication
+- /users/forgot_password_recuperar - Password recovery
+- /predict/ - Anemia prediction
+- /validate/validate - Conjunctival image validation
+- /profiles/* - Profile management
+- /crop/crop - Image cropping
 
 ### Environment Variables
 
@@ -173,7 +170,7 @@ API_BASE_URL=http://your-api-url.com
 API_PORT=3000
 ```
 
-## 🎮 Usage
+## Usage
 
 ### Development Mode
 
@@ -191,26 +188,22 @@ npx expo start
 
 ### Running on Devices
 
-**Option 1: Expo Go (Easiest)**
-
+Option 1: Expo Go (Easiest)
 1. Open Expo Go app on your device
 2. Scan the QR code from the terminal
 3. App will load automatically
 
-**Option 2: Android Emulator**
-
+Option 2: Android Emulator
 ```bash
 npm run android
 ```
 
-**Option 3: iOS Simulator (macOS only)**
-
+Option 3: iOS Simulator (macOS only)
 ```bash
 npm run ios
 ```
 
-**Option 4: Web Browser**
-
+Option 4: Web Browser
 ```bash
 npm run web
 ```
@@ -231,11 +224,10 @@ eas build --platform android
 eas build --platform ios
 ```
 
-## 📁 Project Structure
+## Project Structure
 
-```
 SACN-TESIS-FRONTEND/
-├── 📱 app/                          # Main application screens
+├── app/                          # Main application screens
 │   ├── _layout.tsx                  # Root layout with navigation
 │   ├── index.tsx                    # Landing/splash screen
 │   ├── Login.tsx                    # Authentication screen
@@ -252,10 +244,10 @@ SACN-TESIS-FRONTEND/
 │       ├── education.tsx            # Educational content
 │       └── perfil.tsx               # User profile
 │
-├── 🔌 apis/                         # Backend API integration
+├── apis/                         # Backend API integration
 │   └── apis.tsx                     # API service functions
 │
-├── 🎨 components/                   # Reusable components
+├── components/                   # Reusable components
 │   ├── Button.tsx                   # Custom button component
 │   ├── FormInput.tsx                # Input field component
 │   ├── DateInput.tsx                # Date picker component
@@ -274,39 +266,38 @@ SACN-TESIS-FRONTEND/
 │   │   └── RecommendationOverlay.tsx
 │   └── ui/                          # UI utilities
 │
-├── 🎨 styles/                       # Screen-specific styles
-├── 🎭 constants/                    # App constants & themes
-├── 🪝 hooks/                        # Custom React hooks
-├── 📚 lib/                          # Utility libraries
-├── 🖼️ assets/                       # Images, fonts, icons
-└── 📄 Configuration files
+├── styles/                       # Screen-specific styles
+├── constants/                    # App constants & themes
+├── hooks/                        # Custom React hooks
+├── lib/                          # Utility libraries
+├── assets/                       # Images, fonts, icons
+└── Configuration files
     ├── package.json
     ├── tsconfig.json
     ├── app.json
     └── eslint.config.js
-```
 
-## 🔗 API Integration
+## API Integration
 
 ### Backend Requirements
 
 This frontend application requires the SACN backend server to be running. The backend should provide:
 
-1. **User Authentication API**
+1. User Authentication API
    - Registration with email verification
    - Login/Logout
    - Password recovery
 
-2. **Prediction API**
+2. Prediction API
    - Image validation (is it a valid conjunctival image?)
    - Anemia prediction using ML model
    - Control/screening storage
 
-3. **Profile Management API**
+3. Profile Management API
    - Create, read, update, delete user profiles
    - Retrieve historical data per profile
 
-4. **Image Processing API**
+4. Image Processing API
    - Automatic cropping of region of interest
    - Image preprocessing
 
@@ -319,7 +310,7 @@ Ensure your backend is running and accessible:
 http://<YOUR_IP>:3000
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -337,35 +328,30 @@ Contributions are welcome! Please follow these steps:
 - Test on both iOS and Android
 - Update documentation when needed
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👥 Authors
+## Authors
 
-**Juan Chiscol** - _Thesis Project_
+Juan Chiscol - Thesis Project
 
-## 🙏 Acknowledgments
-
-- Medical advisors and healthcare professionals
-- Machine Learning model contributors
-- Expo and React Native communities
-- Beta testers and early adopters
-
-## 📞 Support
+## Support
 
 For questions, issues, or suggestions:
 
-- 📧 Email: [your-email@example.com]
-- 🐛 Issues: [GitHub Issues](link-to-issues)
-- 💬 Discussions: [GitHub Discussions](link-to-discussions)
+Email: chiscolpatazcajuandavid@gmail.com
 
----
+## Project Screenshots
+
+Here are some screenshots of the SACN app:
 
 <div align="center">
 
-**Made with ❤️ for better healthcare accessibility**
-
-⭐ Star this repo if you find it helpful!
+<img src="./fotos/Welcome.jpeg" alt="Welcome screen" width="300"/>
+<img src="./fotos/Home.jpeg" alt="Home screen" width="300"/>
+<img src="./fotos/Profiles.jpeg" alt="Profile selection" width="300"/>
+<img src="./fotos/Result_anemic.jpeg" alt="Prediction result" width="300"/>
+<img src="./fotos/Chat_IA.jpeg" alt="Educational AI chat" width="300"/>
 
 </div>
