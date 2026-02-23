@@ -46,15 +46,6 @@ app-example
 # API configuration (contains sensitive IPs and endpoints)
 apis/apis.tsx
 
-# User uploaded photos and test images
-fotos/
-
-# But keep asset images
-!assets/**/*.jpg
-!assets/**/*.jpeg
-!assets/**/*.png
-!assets/**/*.avif
-
 # Logs
 *.log
 
