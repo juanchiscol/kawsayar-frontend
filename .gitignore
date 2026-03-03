@@ -43,9 +43,6 @@ app-example
 /ios
 /android
 
-# API configuration (contains sensitive IPs and endpoints)
-apis/apis.tsx
-
 # Logs
 *.log
 

@@ -4,31 +4,32 @@
     "slug": "kawsayar",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/android-icon-foreground.png",
     "scheme": "kawsayar",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/icon.png",
+      "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#1E1E2C"
     },
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "CFBundleLocalizations": ["es"]
-      },
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon.png",
-        "backgroundColor": "#1E1E2C"
+        "CFBundleLocalizations": [
+          "es"
+        ]
       }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon.png",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png",
         "backgroundColor": "#1E1E2C"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.juanchiscol.kawsayar"
     },
     "web": {
       "bundler": "metro",
@@ -45,10 +46,18 @@
           "resizeMode": "contain",
           "backgroundColor": "#1E1E2C"
         }
-      ]
+      ],
+      "@react-native-community/datetimepicker",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "81a7767d-28f9-40b0-9506-c2bd415843ce"
+      }
     }
   }
 }
