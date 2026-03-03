@@ -3,7 +3,8 @@ import { RefObject } from 'react';
 import { View } from 'react-native';
 import { captureRef } from 'react-native-view-shot';
 
-const ip = "xxx.xxx.xx.xx"; // Reemplaza con la IP de tu servidor backend
+const ip = "localhost"; // Para desarrollo local
+
 export const handleEmailVerification = async (email: string, dni: string) => {
   try {
     const response = await fetch(`http://${ip}:3000/users/forgot_validate`, {

@@ -17,9 +17,12 @@
       "supportsTablet": true,
       "infoPlist": {
         "CFBundleLocalizations": [
+          "es",
           "es"
-        ]
-      }
+        ],
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "y"
     },
     "android": {
       "adaptiveIcon": {
